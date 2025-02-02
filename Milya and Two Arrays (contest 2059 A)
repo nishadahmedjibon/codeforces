@@ -1,0 +1,38 @@
+#include<bits/stdc++.h>
+using namespace std;
+ 
+void weirdo()
+{
+    int n;cin>>n;
+    int a[n], b[n];
+    for(int i=0; i<n;i++)
+        cin>>a[i];
+    for(int i=0; i<n; i++)
+        cin>>b[i];
+    sort(a, a+n);
+    sort(b, b+n);
+    int c=1, d=1;
+    for(int i=0; i<n-1; i++)
+    {
+        if(a[i+1]!=a[i])
+            c++;
+        if(b[i+1]!=b[i])
+            d++;
+    }
+    if(c==1 && d==1)
+        cout<<"NO"<<endl;
+    else if(c==2 && d==1 || c==1 && d==2)
+        cout<<"NO"<<endl;
+    else if(c>2 || d>2)
+        cout<<"YES"<<endl;
+    else
+        cout<<"YES"<<endl;
+}
+int main()
+{
+    int t; cin>>t;
+    while(t--)
+    {
+        weirdo();
+    }
+}
