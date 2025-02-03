@@ -1,0 +1,37 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+void weirdo()
+{
+    int n, k; cin>>n>>k;
+    vector<int> vec(n);
+    for(auto &it: vec)
+        cin>>it;
+    if(n==k)
+    {
+        vec.push_back(0);
+        for(int i=1, j=1; i<=n+1; i+=2, j++)
+        {
+            if(vec[i]!=j)
+            {
+                cout<<j<<'\n';break;
+
+            }
+        }
+    }
+    else
+    {
+        if(vec[1]!=1 || vec[2] !=1)
+            cout<<"1\n";
+        else
+            cout<<"2\n";
+    }
+}
+int main()
+{
+    int t; cin>>t;
+    while(t--)
+    {
+        weirdo();
+    }
+}
