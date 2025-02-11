@@ -1,0 +1,27 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+void weirdo()
+{
+    string s;
+    cin>>s;
+    int counter=0, c=1;
+    for(int i=0; i<s.length()-1; i++)
+    {
+    if(s[i]==s[i+1])
+        {
+            cout<<1<<endl;
+            return;
+        }
+    }
+    cout<<s.length()<<"\n";
+
+}
+int main()
+{
+    int t; cin>>t;
+    while(t--)
+    {
+        weirdo();
+    }
+}
