@@ -1,0 +1,42 @@
+#include<bits/stdc++.h>
+using namespace std;
+ 
+void weirdo()
+{
+    int n, k, p;
+    cin>>n>>k>>p;
+    if(k<0)
+    {
+        if((n*p)<k*(-1))
+            cout<<"-1\n";
+        else
+        {
+            int c=(k*(-1))/p;
+            if((k*(-1))%p!=0)
+            cout<<(c+1)<<endl;
+            else
+            cout<<c<<endl;
+        }
+    }
+    else
+    {
+        if((n*p)<k)
+            cout<<"-1\n";
+        else
+        {
+            int c=k/p;
+            if(k%p!=0)
+            cout<<(c+1)<<endl;
+            else
+            cout<<c<<endl;
+        }
+    }
+}
+int main()
+{
+    int t; cin>>t;
+    while(t--)
+    {
+        weirdo();
+    }
+}
