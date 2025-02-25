@@ -1,0 +1,34 @@
+#include<bits/stdc++.h>
+using namespace std;
+ 
+void weirdo()
+{
+    string c;
+    long long n; cin>>n;
+    cin>>c;
+    long long q=0, p=0;
+    for(long long i=0; i<n; i++)
+    {
+        if(c[i]=='_')
+            q++;
+        else
+            p++;
+    }
+    //cout<<d<<e<<endl;
+    //if(p<2 || q==0 || p+q<3)
+ 
+    long long ad=0;
+    if(p%2==1)
+        ad=1;
+    long long ans= (q*(p/2)*((p/2)+ad));
+    cout<<ans<<endl;
+ 
+}
+int main()
+{
+    int t; cin>>t;
+    while(t--)
+    {
+        weirdo();
+    }
+}
