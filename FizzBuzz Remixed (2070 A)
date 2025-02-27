@@ -1,0 +1,28 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+void weirdo()
+{
+    long long n;
+    cin>>n;
+    if(n%15==0)
+        cout<<(n/15)*3 +1<<endl;
+    else
+    {
+        int c=(n/15)*3+1;
+        for(long long i=(n/15)*15 +1; i<=n; i++)
+        {
+            if(i% 3== i%5)
+                c++;
+        }
+        cout<<c<<endl;
+    }
+}
+int main()
+{
+    int t; cin>>t;
+    while(t--)
+    {
+        weirdo();
+    }
+}
