@@ -1,0 +1,57 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+bool ps(long long n)
+{
+    long long a=sqrt(n);
+    if(a*a == n)
+        return true;
+    else
+        return false;
+}
+void weirdo()
+{
+    long long n; cin>>n;
+    long long b=(n*(n+1)/2);
+    if(ps(b)==1)
+        cout<<"-1";
+    else
+    {
+        long long arr[n];
+        vector<int>vec;
+        for(long long i=0; i<n; i++)
+        {
+            arr[i]=i+1;
+        }
+        long long sum=0, i=1, j=0, counter=0;
+        while(counter < n)
+        {
+            long long a=sum+arr[i];
+            if(ps(a)==1 || arr[i]==-1)
+            {
+                i++;
+            }
+            else
+            {
+                vec.push_back(arr[i]);
+                sum+=arr[i];
+                arr[i]=-1;
+                i++;
+                counter++;
+            }
+            if(i==n)
+                i=0;
+        }
+        for(long long i=0; i<vec.size(); i++)
+        cout<<vec[i]<<" ";
+    }
+}
+int main()
+{
+    int t; cin>>t;
+    while(t--)
+    {
+        weirdo();
+        cout<<endl;
+    }
+}
