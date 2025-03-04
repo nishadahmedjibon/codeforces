@@ -1,0 +1,29 @@
+#include<bits/stdc++.h>
+using namespace std;
+void weirdo(){
+    int n,k;
+    cin>>n>>k;
+    int ans = INT_MAX;
+    int a;
+    int even =0;
+    for(int i = 0;i<n;i++){
+        cin>>a;
+        int op = (k-a%k)%k;
+        ans = min(ans,op);
+        if(a%2==0){
+            even++;
+        }
+    }
+    if(k==4){
+        ans = min(ans,max(0,2-even));
+    }
+    cout<<ans<<endl;
+}
+int main(){
+int T;
+cin>>T;
+while(T--){
+    weirdo();
+   }
+    return 0;
+}
