@@ -1,20 +1,26 @@
 #include<bits/stdc++.h>
 #define ll long long int
 using namespace std;
-
+ 
 void weirdo()
 {
     ll n, k;
     cin>>n>>k;
     ll arr[n];
     pair<ll, ll> p[n];
-
+ 
     for(ll i=0; i<n; i++)
     {
         cin>>arr[i];
         ll a=arr[i]%k;
+        
+        if(a==0)
+            a=k;
+            
+        p[i]={-a, i};
     }
     sort(p, p+n);
+   
     for(ll i=0; i<n; i++)
     {
         cout<<p[i].second+1<<" ";
