@@ -1,0 +1,28 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+ 
+void weirdo(){
+    ll n,k,q;
+    cin>>n>>k>>q;
+    ll ans=0,cnt=0;
+    for(int i=1;i<=n;i++){
+        int m;
+        cin>>m;
+        if(m<=q) cnt++;
+        else cnt=0;
+        if(cnt>=k){
+            ans+=(cnt-k+1);
+        }
+    }
+    cout<<ans<<endl;
+}
+ 
+int main() {
+    int t;
+    cin>>t;
+    while(t--){
+        weirdo();
+    }
+ 
+}
