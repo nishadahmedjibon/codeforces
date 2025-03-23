@@ -1,0 +1,29 @@
+#include<bits/stdc++.h>
+typedef long long int ll;
+using namespace std;
+
+void weirdo()
+{
+    ll n; char c;
+    cin>>n>>c;
+    string s; cin>>s;
+    s=s+s;
+    ll minimum= -1, maximum=-1;
+    for(ll i=s.size(); i>=0; i--)
+    {
+        if(s[i]=='g')
+            minimum=i;
+        if(s[i]==c && maximum<=minimum)
+            maximum=max(maximum, minimum-i);
+    }
+    cout<<maximum<<endl;
+
+}
+int main()
+{
+    int t; cin>>t;
+    while(t--)
+    {
+        weirdo();
+    }
+}
