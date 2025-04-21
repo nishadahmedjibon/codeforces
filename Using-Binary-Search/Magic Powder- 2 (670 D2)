@@ -1,0 +1,66 @@
+/* Problem Link: https://codeforces.com/contest/670/problem/D2 */
+
+#include<bits/stdc++.h>
+typedef long long int ll;
+using namespace std;
+ 
+ll finder(vector<ll>& a, vector<ll>& b, ll mid, ll k, ll n)
+{
+    ll cnt=0;
+    for(ll i=0; i<n; i++)
+    {
+        if(b[i]/a[i]>=mid)
+            cnt++;
+        else
+        {
+            ll d=a[i]*mid;
+            k=k-(d-b[i]);
+            if(k>=0)
+                cnt++;
+            else
+                return cnt;
+        }
+    }
+    return cnt;
+}
+ 
+void weirdo()
+{
+    ll n, k;
+    cin>>n>>k;
+    vector<ll> a;
+    for(ll i=0; i<n; i++)
+    {
+        ll x; cin>>x;
+        a.push_back(x);
+ 
+    }
+    vector<ll>b;
+    for(ll i=0; i<n; i++)
+    {
+        ll x; cin>>x;
+        b.push_back(x);
+    }
+    vector<ll>c;
+ 
+    ll low=0;
+    ll high=*max_element(b.begin(), b.end())+k;
+ 
+    while(low<=high)
+    {
+        int mid=(low+high)/2;
+        int val=finder(a,b,mid,k,n);
+ 
+        if(val>=n)
+        {
+            low=mid+1;
+        }
+        else
+            high=mid-1;
+    }
+    cout<<high<<endl;
+}
+int main()
+{
+    weirdo();
+}
