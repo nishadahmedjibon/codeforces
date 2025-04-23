@@ -1,0 +1,36 @@
+#include<bits/stdc++.h>
+typedef long long int ll;
+#define nl '\n';
+using namespace std;
+ll finder(ll n)
+{
+    return ((n*(n+1))/2);
+}
+void weirdo()
+{
+    ll n, k;
+    cin>>n>>k;
+    if(finder(k-1)<n-1)
+    {
+        cout<<"-1\n";
+        return ;
+    }
+    if(n==k)
+    {
+        cout<<"1\n";
+        return;
+    }
+    ll low=0, high=k-1;
+    while(low<=high)
+    {
+        ll mid=(low+high)/2;
+        if(finder(k-1)-finder(mid)>=n-1)
+            low=mid+1;
+        else high=mid-1;
+    }
+    cout<<k-1-high;
+}
+int main()
+{
+    weirdo();
+}
