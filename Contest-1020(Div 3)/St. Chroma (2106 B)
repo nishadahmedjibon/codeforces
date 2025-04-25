@@ -1,0 +1,39 @@
+#include<bits/stdc++.h>
+typedef long long int ll;
+#define nl '\n';
+using namespace std;
+ 
+void weirdo()
+{
+    ll n,x;
+    cin>>n>>x;
+    vector<ll>vec;
+    ll i=0;
+    for(;i<n-1; i++)
+    {
+        if(i==x)
+        {
+            vec.push_back(i+1);
+            i++;
+            n++;
+        }
+        else
+            vec.push_back(i);
+ 
+    }
+    if(x<n)
+        vec.push_back(x);
+    else
+        vec.push_back(x-1);
+    for(auto it: vec)
+        cout<<it<<" ";
+}
+int main()
+{
+    int t; cin>>t;
+    while(t--)
+    {
+        weirdo();
+        cout<<endl;
+    }
+}
