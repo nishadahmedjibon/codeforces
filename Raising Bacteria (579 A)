@@ -1,0 +1,15 @@
+#include<bits/stdc++.h>
+using namespace std;
+ 
+void weirdo()
+{
+    long long x;
+    cin>>x;
+    
+    cout<<__builtin_popcount(x);
+}
+ 
+int main()
+{
+    weirdo();
+}
